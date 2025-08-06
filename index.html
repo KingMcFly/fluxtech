@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Sitio Web Profesional - Diseño Web para Empresas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .gradient-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .liquid-glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        }
+        .gradient-card { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .gradient-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .modern-shadow { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+        .card-hover { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-hover:hover { 
+            transform: translateY(-8px) scale(1.02); 
+            box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.25);
+        }
+        .plan-popular { border: 2px solid #667eea; position: relative; }
+        .plan-popular::before { content: 'MÁS POPULAR'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 4px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <i class="fas fa-code text-blue-600 text-2xl mr-2"></i>
+                    <span class="text-xl font-bold text-gray-900">FluxTech</span>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#servicios" class="text-gray-600 hover:text-blue-600 transition-colors">Servicios</a>
+                    <a href="#planes" class="text-gray-600 hover:text-blue-600 transition-colors">Planes</a>
+                    <a href="#contacto" class="text-gray-600 hover:text-blue-600 transition-colors">Contacto</a>
+                </nav>
+                <button onclick="scrollToContact()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                    Solicitar Presupuesto
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Tu Sitio Web <span class="text-blue-300">Profesional</span>
+                    </h1>
+                    <p class="text-xl mb-8 text-blue-100 leading-relaxed">
+                        Incrementa tu presencia online, atrae más clientes y vende más con una web diseñada especialmente para tu negocio.
+                    </p>
+                    <button onclick="scrollToContact()" class="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-colors shadow-lg">
+                        Solicita tu presupuesto
+                    </button>
+                </div>
+                <div class="text-center">
+                    <div class="liquid-glass rounded-3xl p-8 floating-animation">
+                        <i class="fas fa-laptop-code text-8xl text-white mb-4"></i>
+                        <div class="grid grid-cols-3 gap-4 mt-6">
+                            <div class="liquid-glass rounded-xl p-3">
+                                <i class="fas fa-mobile-alt text-2xl text-white"></i>
+                            </div>
+                            <div class="liquid-glass rounded-xl p-3">
+                                <i class="fas fa-search text-2xl text-white"></i>
+                            </div>
+                            <div class="liquid-glass rounded-xl p-3">
+                                <i class="fas fa-chart-line text-2xl text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ¿Por qué necesitas un sitio web? -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">¿Por qué necesitas un sitio web?</h2>
+                <p class="text-xl text-gray-600">Descubre cómo un sitio web profesional puede transformar tu negocio</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="glass-card rounded-3xl p-8 text-center card-hover">
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-clock text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Presencia 24/7</h3>
+                    <p class="text-gray-600">Tu negocio siempre abierto para tus clientes.</p>
+                </div>
+                
+                <div class="glass-card rounded-3xl p-8 text-center card-hover">
+                    <div class="bg-gradient-to-br from-green-500 to-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Más Credibilidad</h3>
+                    <p class="text-gray-600">Genera confianza mostrando una imagen profesional.</p>
+                </div>
+                
+                <div class="glass-card rounded-3xl p-8 text-center card-hover">
+                    <div class="bg-gradient-to-br from-purple-500 to-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Aumenta Ventas</h3>
+                    <p class="text-gray-600">Convierte visitantes en clientes con diseños atractivos y optimizados.</p>
+                </div>
+                
+                <div class="glass-card rounded-3xl p-8 text-center card-hover">
+                    <div class="bg-gradient-to-br from-orange-500 to-orange-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-trophy text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Competitividad</h3>
+                    <p class="text-gray-600">Destaca frente a tu competencia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Incluidos -->
+    <section id="servicios" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Servicios Incluidos</h2>
+                <p class="text-xl text-gray-600">Todo lo que necesitas para tener éxito online</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-blue-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-palette text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Diseño Personalizado</h3>
+                    <p class="text-gray-600">Diseño personalizado y moderno adaptado a tu marca.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-green-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-search text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Optimización SEO</h3>
+                    <p class="text-gray-600">Optimización SEO para aparecer en Google.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-purple-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-mobile-alt text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Diseño Responsive</h3>
+                    <p class="text-gray-600">Diseño responsive adaptado a móviles y tablets.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-pink-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-share-alt text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Integración Social</h3>
+                    <p class="text-gray-600">Integración con redes sociales y WhatsApp.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planes y Precios -->
+    <section id="planes" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Planes y Precios</h2>
+                <p class="text-xl text-gray-600">Elige el plan perfecto para tu negocio</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8 mb-12">
+                <!-- Plan Landing Page -->
+                <div class="glass-card rounded-3xl p-8 card-hover">
+                    <div class="text-center mb-8">
+                        <i class="fas fa-file-alt text-blue-600 text-4xl mb-4"></i>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Plan Landing Page</h3>
+                        <p class="text-gray-600 mb-6">Ideal para mostrar información básica, capturar clientes y promocionar campañas específicas.</p>
+                        <div class="text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">Consulta precio</div>
+                    </div>
+                    <button onclick="scrollToContact()" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-semibold shadow-lg">
+                        Elegir Plan
+                    </button>
+                </div>
+                
+                <!-- Plan Web Profesional -->
+                <div class="glass-card rounded-3xl p-8 card-hover plan-popular">
+                    <div class="text-center mb-8">
+                        <i class="fas fa-globe text-blue-600 text-4xl mb-4"></i>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Plan Web Profesional</h3>
+                        <p class="text-gray-600 mb-6">Sitio web completo con varias secciones, ideal para pequeñas y medianas empresas.</p>
+                        <div class="text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">Consulta precio</div>
+                    </div>
+                    <button onclick="scrollToContact()" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-semibold shadow-lg">
+                        Elegir Plan
+                    </button>
+                </div>
+                
+                <!-- Plan Ecommerce -->
+                <div class="glass-card rounded-3xl p-8 card-hover">
+                    <div class="text-center mb-8">
+                        <i class="fas fa-shopping-cart text-blue-600 text-4xl mb-4"></i>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Plan Ecommerce</h3>
+                        <p class="text-gray-600 mb-6">Tienda online para vender productos o servicios con pagos integrados.</p>
+                        <div class="text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">Consulta precio</div>
+                    </div>
+                    <button onclick="scrollToContact()" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-semibold shadow-lg">
+                        Elegir Plan
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Beneficios incluidos -->
+            <div class="glass-card rounded-3xl p-8">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">Todos los planes incluyen:</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="flex items-center">
+                        <i class="fas fa-globe text-blue-600 text-xl mr-3"></i>
+                        <span class="text-gray-700">Dominio personalizado</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-server text-green-600 text-xl mr-3"></i>
+                        <span class="text-gray-700">Hosting rápido y seguro</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-lock text-purple-600 text-xl mr-3"></i>
+                        <span class="text-gray-700">Certificado SSL</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-headset text-orange-600 text-xl mr-3"></i>
+                        <span class="text-gray-700">Soporte técnico permanente</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Contacto</h2>
+                <p class="text-xl text-gray-600">Haz que tu negocio llegue al siguiente nivel digital</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Formulario -->
+                <div class="bg-gray-50 rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Solicita tu presupuesto</h3>
+                    <form class="space-y-6" onsubmit="handleSubmit(event)">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Nombre completo</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                            <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Teléfono</label>
+                            <input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Mensaje</label>
+                            <textarea rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
+                            Enviar Solicitud
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Información de contacto -->
+                <div class="space-y-8">
+                    <div class="gradient-card rounded-2xl p-8 text-white modern-shadow">
+                        <h3 class="text-2xl font-bold mb-6">Información de Contacto</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-building text-white/80 text-xl mr-4"></i>
+                                <span>FluxTech - Diseño Web Profesional</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-white/80 text-xl mr-4"></i>
+                                <span>+1 (555) 123-4567</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-white/80 text-xl mr-4"></i>
+                                <span>contacto@fluxtech.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 modern-shadow">
+                        <h4 class="text-xl font-bold text-gray-900 mb-4">¿Por qué elegirnos?</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-rocket text-purple-600 mr-3"></i>
+                                <span class="text-gray-700">Programadores recién titulados con energía fresca</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-lightbulb text-yellow-500 mr-3"></i>
+                                <span class="text-gray-700">Ideas innovadoras y tecnologías actuales</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-heart text-red-500 mr-3"></i>
+                                <span class="text-gray-700">Pasión por crear soluciones únicas</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-dollar-sign text-green-600 mr-3"></i>
+                                <span class="text-gray-700">Precios competitivos para impulsar tu negocio</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center mb-4">
+                    <i class="fas fa-code text-blue-400 text-2xl mr-2"></i>
+                    <span class="text-xl font-bold">FluxTech</span>
+                </div>
+                <p class="text-gray-400 mb-6">Creamos sitios web que impulsan tu negocio</p>
+                <div class="flex justify-center space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                </div>
+                <div class="border-t border-gray-800 mt-8 pt-8">
+                    <p class="text-gray-400">&copy; 2024 FluxTech. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToContact() {
+            document.getElementById('contacto').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('¡Gracias por tu interés! Te contactaremos pronto para discutir tu proyecto.');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96b05867d0acb525',t:'MTc1NDUwMjI5OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
